@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.adrian.tenminutesapp.pages.tenminutes.subpages.home.viewmodel.HomePageViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/home_page_more_item_ic_size"
+                    android:layout_height="@dimen/home_page_more_item_ic_size"
+                    android:onClick="@{viewModel::onClickRemoveMenuA}"
+                    android:src="@android:drawable/ic_delete" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:background="@{viewModel.menuA  ? @color/item_added : @color/item_not_added}"
+                    android:onClick="@{viewModel::onClickMenuA}"
+                    android:text="Menu A, (+900)"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/home_page_more_item_ic_size"
+                    android:layout_height="@dimen/home_page_more_item_ic_size"
+                    android:onClick="@{viewModel::onClickAddMenuA}"
+                    android:src="@android:drawable/ic_input_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{Integer.toString(viewModel.menuACount)}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/home_page_more_item_ic_size"
+                    android:layout_height="@dimen/home_page_more_item_ic_size"
+                    android:onClick="@{viewModel::onClickRemoveMenuB}"
+                    android:src="@android:drawable/ic_delete" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:background="@{viewModel.menuB  ? @color/item_added : @color/item_not_added}"
+                    android:onClick="@{viewModel::onClickMenuB}"
+                    android:text="Menu B, (+1090)"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/home_page_more_item_ic_size"
+                    android:layout_height="@dimen/home_page_more_item_ic_size"
+                    android:onClick="@{viewModel::onClickAddMenuB}"
+                    android:src="@android:drawable/ic_input_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{Integer.toString(viewModel.menuBCount)}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/home_page_more_item_ic_size"
+                    android:layout_height="@dimen/home_page_more_item_ic_size"
+                    android:onClick="@{viewModel::onClickRemoveFlavoredDressing}"
+                    android:src="@android:drawable/ic_delete" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:background="@{viewModel.flavoredDressing ? @color/item_added : @color/item_not_added}"
+                    android:onClick="@{viewModel::onClickFlavoredDressing}"
+                    android:text="Flavored Dressing, (+100)"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/home_page_more_item_ic_size"
+                    android:layout_height="@dimen/home_page_more_item_ic_size"
+                    android:onClick="@{viewModel::onClickAddFlavoredDressing}"
+                    android:src="@android:drawable/ic_input_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{Integer.toString(viewModel.flavoredDressingCount)}" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.adrian.tenminutesapp.pages.tenminutes.subpages.history.viewmodel.CostRegistryItemViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvCostRegistries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/summaryOverviewSection"
+            android:nestedScrollingEnabled="false"
+            android:paddingTop="8dp"
+            app:listItemLayout="@{viewModel.itemLayoutId}"
+            app:listItems="@{viewModel.singleCostRegistrieItemViewModels}"
+            app:variableId="@{viewModel.variableId}" />
+    </android.support.v7.widget.CardView>
+</layout>
